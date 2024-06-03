@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgba(78, 78, 78, 0.7);
 }
 
 #todo-container {
@@ -28,7 +28,7 @@ body {
   border: 1px solid var(--cor2);
   border-radius: 10px;
   box-shadow: 1px 1px 15px rgb(0, 0, 0, 0.4);
-
+  overflow: hidden;
 }
 
 header {
@@ -89,7 +89,8 @@ button:hover {
   border-radius: 10px;
   padding: 0.6rem;
   border-bottom: 3px solid rgb(0, 0, 0, 0.4);
-
+  position: relative;
+  animation: todo-slide 430ms ease-out;
 }
 
 .todo h4 {
@@ -125,4 +126,30 @@ button:hover {
 
 .hide {
   display: none;
+}
+
+.remove-animation{
+  animation: remove-btn 400ms ease-out;
+}
+
+/* Keyframes */
+
+@keyframes todo-slide{
+  from{
+    right: 230px;
+  }
+
+  to{
+    right: 0;
+  }
+}
+
+@keyframes remove-btn{
+  from{
+    left: 0;
+  }
+
+  to{
+    left: 260px;
+  }
 }

@@ -169,10 +169,16 @@ function criarTarefa() {
 
   })
 
+  // botão remove
   btnDel.addEventListener("click", (e) => {
     let targetEl = e.target
     let parentEl = targetEl.closest("div")
+    
+    parentEl.classList.add("remove-animation")
 
-    parentEl.remove()
+    setTimeout(() => {
+      parentEl.remove()
+    }, 400);
+    
   })
 }
